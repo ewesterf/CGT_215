@@ -3,9 +3,128 @@
 
 #include <iostream>
 
+using namespace std;
+
+void printMenu()
+{
+    cout << "Please select which operation to perform:" << endl;
+    cout << "t\1. Factorial" << endl;
+    cout << "t\2. Arithmetic Series" << endl;
+    cout << "t\3. Geometric Series" << endl;
+    cout << "t\4. Exit" << endl;
+    cout << "Your Selection: ";
+}
+
+void again()
+{
+    char input;
+    cout << "Go Again? [Y/N] ";
+    cin >> input;
+    if (input == 'y'|| 'Y')
+    {
+        main();
+    }
+}
+
+void factorial()
+{
+    float X;
+    float A;
+    float B;
+    float C;
+    cout << "Factorial:" << endl;
+    cout << "Enter a number: ";
+    cin >> X;
+
+    if (X < 1)
+    {
+        cout << "Nice try, please enter a POSITIVE number...: ";
+        cin >> X;
+    }
+
+    else if (X == 1)
+    {
+        cout << "1! = " << X << endl;
+        again();
+    }
+
+    else if (X > 1 > 4)
+    {
+        A = X * (X - 1);
+
+        if (--X == 1) 
+        {
+            cout << X << "! = " << A;
+            again();
+        }
+
+        else
+        {
+            B = A * (X - 2);
+
+            if ((X - 2) == 1)
+            {
+                cout << X << "! = " << B;
+                again();
+            }
+            
+            else
+            {
+                C = B * (X - 3);
+
+                if ((X - 3) == 1)
+                {
+                    cout << X << "! = " << C;
+                }
+            }
+        }
+    }
+}
+
+void arithmetic()
+{
+
+}
+
+void geometric()
+{
+
+}
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    int choice;
+    char again;
+
+    do
+    {
+        printMenu();
+        cin >> choice;
+
+        // Quit if user chooses to exit (or any invalid choice)
+        if (choice > 3 || choice < 1)
+        {
+            return 0;
+        }
+
+        else if (choice == 1)
+        {
+            factorial();
+        }
+
+        else if (choice == 2)
+        {
+            arithmetic();
+        }
+
+        else if (choice == 3)
+        {
+            geometric();
+        }
+
+        cout << "Go Again? [Y/N] ";
+        cin >> again;
+    } while (again == 'y' || again == 'Y');
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
