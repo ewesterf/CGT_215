@@ -1,9 +1,7 @@
-// CGT_215.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// lab4.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
-
-using namespace 
 
 int main()
 {
